@@ -1,27 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = id => document.getElementById(id);
-  const toggle = (el, cls) => el.classList.toggle(cls);
-
-  const botao = btn('botao-acessibilidade'),
-        opcoes = btn('opcoes-acessibilidade'),
-        aMais = btn('aumentar-fonte'),
-        aMenos = btn('diminuir-fonte'),
-        contraste = btn('alterna-contraste');
-
-  let fonte = 1;
-
-  botao.onclick = () => {
-    toggle(botao, 'rotacao-botao');
-    toggle(opcoes, 'apresenta-lista');
-    botao.setAttribute('aria-expanded', !(botao.getAttribute('aria-expanded') === 'true'));
-  };
-
-  aMais.onclick = () => document.body.style.fontSize = `${(fonte += 0.1).toFixed(1)}rem`;
-  aMenos.onclick = () => document.body.style.fontSize = `${(fonte -= 0.1).toFixed(1)}rem`;
-  contraste.onclick = () => toggle(document.body, 'alto-contraste');
-});
-
-// ScrollReveal
-['#inicio', '#SpikePro', '#galeria', '#contato'].forEach(id =>
-  ScrollReveal().reveal(id, { delay: 500 })
-);
+document.addEventListener('DOMContentLoaded', function(){
+    const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade')
+    const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade')
+ 
+    botaoDeAcessibilidade.addEventListener('click', function (){
+     botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+     opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+ 
+     const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+     botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
+   
+    })
+ 
+     const aumentaFonteBotao = document.getElementById('aumentar-fonte');
+     const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+     
+     const alternaContraste = document.getElementById('alterna-contraste')
+ 
+     let tamanhoAtualFonte = 1;
+ 
+     aumentaFonteBotao.addEventListener('click', function(){
+         tamanhoAtualFonte += 0.1;
+         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+ 
+     })
+ 
+     diminuiFonteBotao.addEventListener('click', function(){
+         tamanhoAtualFonte -= 0.1;
+         document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+ 
+     })
+ 
+     alternaContraste.addEventListener('click', function(){
+         document.body.classList.toggle('alto-contraste')
+     })
+ 
+ 
+ })
+ 
+ ScrollReveal().reveal('#inicio', { delay: 500 });
+ ScrollReveal().reveal('#SpikePro', { delay: 500 });
+ ScrollReveal().reveal('#galeria', { delay: 500 });
+ ScrollReveal().reveal('#contato', { delay: 500 });
