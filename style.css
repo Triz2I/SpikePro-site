@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 :root {
-  --azul: #0400ffff;
-  --preto: #000;
-  --branco: #fff;
-  --amarelo: #f5e275;
+    --laranja-claro: #FF862A;
+    --alto-contraste-fundo: #000000;
+    --alto-contraste-texto: #ffffff;
+    --alto-contraste-link: #ffd700;
 }
 
 body {
-  font: 1rem 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-family: 'Montserrat';
 }
 
-header, .formulario {
-  background: var(--amarelo);
+header {
+    background-color: #ffffff;
 }
 
 section {
@@ -54,6 +56,8 @@ section {
   border: none;
   width: 14em;
   height: 3em;
+  align-content: center;
+
 }
 
 .display-4 {
@@ -61,9 +65,10 @@ section {
 }
 
 #SpikePro {
-  position: relative;
-  padding-top: 5rem;
-  margin: 3rem 0;
+    position: relative;
+    padding-top: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   background: url('img/flor.png') top right no-repeat, url('img/flor-esquerda.png') bottom left no-repeat;
   background-size: 180px;
 }
@@ -79,6 +84,7 @@ section {
 h2 {
   font-family: 'Lemon', serif;
   font-size: 2.5em;
+  font-style: normal;
   color: var(--azul);
 }
 
@@ -97,9 +103,10 @@ h2 {
 }
 
 .formulario {
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px #0001;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-weight: bold;
 }
 
